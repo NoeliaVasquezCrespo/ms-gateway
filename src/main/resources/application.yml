@@ -1,0 +1,15 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ms-transfer
+          uri: lb://MS-TRANSFER
+          predicates:
+            - Path=/ms-transfer/** 
+          filters:
+            - RewritePath=/ms-transfer/(?<remaining>.*), /$\{remaining}  
