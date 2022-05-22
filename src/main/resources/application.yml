@@ -1,5 +1,5 @@
 server:
-  port: 8282
+  port: 8181
 
 spring:
   application:
@@ -7,9 +7,9 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ms-transfer
-          uri: lb://MS-TRANSFER
+        - id: ms-book 
+          uri: lb://MS-BOOK
           predicates:
-            - Path=/ms-transfer/** 
+            - Path=/ms-book/** 
           filters:
-            - RewritePath=/ms-transfer/(?<remaining>.*), /$\{remaining}  
+            - RewritePath=/ms-book/(?<remaining>.*), /$\{remaining}  
