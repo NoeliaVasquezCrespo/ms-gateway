@@ -13,3 +13,17 @@ spring:
             - Path=/ms-book/** 
           filters:
             - RewritePath=/ms-book/(?<remaining>.*), /$\{remaining}  
+
+        - id: ms-client
+          uri: lb://MS-CLIENT
+          predicates:
+            - Path=/ms-client/** 
+          filters:
+            - RewritePath=/ms-client/(?<remaining>.*), /$\{remaining}  
+
+        - id: ms-loan 
+          uri: lb://MS-LOAN
+          predicates:
+            - Path=/ms-loan/** 
+          filters:
+            - RewritePath=/ms-loan/(?<remaining>.*), /$\{remaining}          
