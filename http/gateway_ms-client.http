@@ -1,0 +1,9 @@
+####
+GET http://localhost:8181/ms-client/v1/api/client
+Content-Type: application/json
+
+
+####
+GET http://localhost:8181/ms-client/v1/api/address
+Content-Type: application/json
+
